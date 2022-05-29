@@ -3,13 +3,14 @@ import "./App.css";
 import FormInput from "./components/FormInput";
 
 function App() {
-  const [values, setValues] = useState({
+  const initialData = {
     username: "",
     email: "",
     birthday: "",
     password: "",
     confirmPassword: "",
-  });
+  };
+  const [values, setValues] = useState(initialData);
 
   const inputs = [
     {
@@ -43,7 +44,7 @@ function App() {
     {
       id: 4,
       name: "password",
-      type: "text",
+      type: "password",
       placeholder: "Password",
       errorMessage:
         "Password should be 6-20 characters and include at least 1 letter, 1 number and 1 special character",
@@ -55,7 +56,7 @@ function App() {
     {
       id: 5,
       name: "confirmPassword",
-      type: "text",
+      type: "password",
       placeholder: "Confirm Password",
       errorMessage: "Password don't match",
       label: "Confirm Password",
@@ -69,7 +70,7 @@ function App() {
     // const data = new FormData(e.target);
     // console.log(Object.fromEntries(data.entries()));
 
-    console.log("It worked!");
+    alert("Form Submitted!");
   };
 
   const handleChange = (e) => {
